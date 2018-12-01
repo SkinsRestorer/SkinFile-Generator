@@ -14,34 +14,57 @@ $(document).ready(function(){
 
   $('#uploadFile').on('submit', function(e){
     e.preventDefault();
-    var data = new FormData($(this)[0]);
-    $.ajax({
-      type: 'post',
-      url: 'Libraries/core.php',
-      data: data,
-      cache: false,
-      processData: false,
-      contentType: false,
-      dataType: 'json',
-      encode: true
-    }).done(function(respond){
-      console.log(respond);
-      $('#usageCount').html(respond.usageCount);
+    if($('.custom-file-input').val()){
+      var data = new FormData($(this)[0]);
+      $.ajax({
+        type: 'post',
+        url: 'Libraries/core.php',
+        data: data,
+        cache: false,
+        processData: false,
+        contentType: false,
+        dataType: 'json',
+        encode: true
+      }).done(function(respond){
+        console.log(respond);
+        if(respond.fileName && respond.usageCount){
+          $('#usageCount').html(respond.usageCount);
+          swal({
+            type: 'success',
+            title: 'Enjoy your skin',
+            text: 'The System going to download a skin file!'
+          });
+
+          var download = $('<a>', {
+            href: 'Skins/' + respond.fileName + '.skin',
+            target: '_blank',
+            download: respond.fileName + '.skin'
+          });
+          download[0].click();
+        } else {
+          swal({
+            type: 'error',
+            title: 'Sorry, something went wrong!',
+            text: "Please upload a minecraft's skin or reload the site."
+          });
+        }
+
+        $('.custom-file-input').val('');
+        $('.custom-file-label').html('Choose skins(s)...');
+      }).fail(function(respond){
+        swal({
+          type: 'error',
+          title: 'Sorry, something went wrong!',
+          text: "Please upload a minecraft's skin or reload the site."
+        });
+        console.log('Fail : ' + respond);
+      });
+    } else {
       swal({
-        type: 'success',
-        title: 'Enjoy your skin',
-        text: 'The System going to download a skin file!'
+        type: 'warning',
+        title: 'Sorry, something went wrong!',
+        text: "Please select a minecraft's skin first."
       });
-
-      var download = $('<a>', {
-        href: 'Skins/' + respond.fileName + '.skin',
-        target: '_blank',
-        download: respond.fileName + '.skin'
-      });
-      download[0].click();
-
-      $('.custom-file-input').val('');
-      $('.custom-file-label').html('Choose skins(s)...');
-    });
+    }
   });
 });
