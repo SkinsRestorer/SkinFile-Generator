@@ -1,19 +1,15 @@
-<?php
-  $file = file_get_contents('history.json');
-  $usageCount = json_decode($file, true);
- ?>
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>RiFlowTH</title>
+    <title>SkinFile Generator</title>
 
   	<!-- Include Libraries -->
-    <link rel="shortcut icon" href="https://cdn.riflowth.me/image/VectierLogo.png">
-    <link rel="stylesheet" href="https://cdn.riflowth.me/css/bootstrap-4.1.3.min.css">
-    <link rel="stylesheet" href="https://cdn.riflowth.me/fontawesome/css/all.min.css">
-  	<link rel="stylesheet" href="https://cdn.riflowth.me/css/styles.css">
+    <link rel="shortcut icon" href="Resources/image/VectierLogo.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  	<link rel="stylesheet" href="Resources/css/styles.css">
 
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
@@ -21,27 +17,29 @@
   	<meta name="keywords" content="RiFlowTH, VectierThailand, Vectier">
   	<meta name="author" content="RiFlowTH">
 
+  	<meta property="og:title" content="SkinFile Generator">
+  	<meta property="og:type" content="website">
+  	<meta property="og:url" content="">
+  	<meta property="og:image" content="Resources/image/avatar.jpg">
+  	<meta property="og:description" content="SkinFile Generator for SkinsRestorer">
+
     <style>
       body, html{
         font-family: -apple-system,BlinkMacSystemFont,Roboto,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji","Pridi";
       }
+      .list-group-item:focus, .list-group-item:hover { z-index: 0; text-decoration: none; }
     </style>
   </head>
   <body class="bg-light">
     <!-- Navigator -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm px-lg-5 stricky-top">
       <p class="navbar-brand mb-0">
-        <img src="https://cdn.riflowth.me/image/VectierLogo.png" width="30" height="30" class="d-inline-block align-top rounded-circle mr-1" alt="">
+        <img src="Resources/image/VectierLogo.png" width="30" height="30" class="d-inline-block align-top rounded-circle mr-1" alt="">
         <span>Vectier</span>
       </p>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div id="navbarCollapse" class="collapse navbar-collapse">
-        <div class="navbar-nav ml-auto mt-lg-0 mt-2">
-          <a class="nav-item btn btn-sm btn-pill btn-info" href="https://api.riflowth.me"><i class="fas fa-plus"></i> Another API</a>
-        </div>
-      </div>
     </nav>
 
   	<section id="banner">
@@ -91,8 +89,7 @@
           <div class="col-lg-3 text-center">
             <div class="position-relative bg-white shadow rounded-1 p-4">
               <div class="absolute-fixed-top pt-1 bg-dark"></div>
-              <h6><i class="fas fa-signal text-success"></i> API Status <span class="badge badge-success">ONLINE</span></h6>
-              <h6 class="mb-0"><i class="fas fa-users"></i> Usage <u id="usageCount"><?php echo $usageCount; ?></u> times</h6>
+              <h6 class="mb-0"><i class="fas fa-signal text-success"></i> API Status <span class="badge badge-success">ONLINE</span></h6>
             </div>
           </div>
         </div>
@@ -103,15 +100,15 @@
       <div class="container p-5">
         <h5>😊 I'm very happy if you want to contribute this API <small>#skinfilegenerator</small></h5>
         <p>&mdash; We hope you will help us. <cite>LOL</cite></p>
-        <a class="btn btn-outline-primary px-3 mb-lg-0 mb-1" href="https://github.com/riflowth" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        <a class="btn btn-outline-danger px-3 mb-lg-0 mb-1" href="https://github.com/riflowth" target="_blank"><i class="fab fa-github"></i> Report issue</a>
-        <a class="btn btn-outline-success px-3 mb-lg-0 mb-1" href="https://github.com/riflowth" target="_blank"><i class="fab fa-github"></i> Pull request</a>
+        <a class="btn btn-outline-primary px-3 mb-lg-0 mb-1" href="https://github.com/riflowth/SkinFile-Generator" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a class="btn btn-outline-danger px-3 mb-lg-0 mb-1" href="https://github.com/riflowth/SkinFile-Generator/issues" target="_blank"><i class="fab fa-github"></i> Report issue</a>
+        <a class="btn btn-outline-success px-3 mb-lg-0 mb-1" href="https://github.com/riflowth/SkinFile-Generator/pulls" target="_blank"><i class="fab fa-github"></i> Pull request</a>
         <div class="row my-5">
           <div class="col-lg-3 col-md-4 col-6">
-            <img class="w-100 shadow rounded-circle animate-zoom-1" src="https://cdn.riflowth.me/image/avatar.jpg" alt="RiFlowTH Avatar">
+            <img class="w-100 shadow rounded-circle animate-zoom-1" src="Resources/image/avatar.jpg" alt="RiFlowTH Avatar">
           </div>
           <div class="col-lg-3 col-md-4 col-6">
-            <img class="w-100 shadow rounded-circle animate-zoom-1" src="https://cdn.riflowth.me/image/VectierLogo.png" alt="">
+            <img class="w-100 shadow rounded-circle animate-zoom-1" src="Resources/image/VectierLogo.png" alt="">
           </div>
         </div>
       </div>
@@ -137,8 +134,8 @@
 		</footer>
 
     <!-- Include JavaScripts -->
-    <script src="https://cdn.riflowth.me/js/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.riflowth.me/js/bootstrap-4.1.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.29.2/dist/sweetalert2.all.min.js"></script>
 	  <script src="Libraries/core.js"></script>
   </body>
