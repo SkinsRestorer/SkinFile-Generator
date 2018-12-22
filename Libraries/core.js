@@ -18,46 +18,48 @@ $(document).ready(function(){
       var data = new FormData($(this)[0]);
       $.ajax({
         type: 'post',
-        url: 'Libraries/core.php',
+        url: 'https://api.mineskin.org/generate/upload',
         data: data,
         cache: false,
         processData: false,
         contentType: false,
         dataType: 'json',
         encode: true
-      }).done(function(respond){
-        console.log(respond);
-        if(respond.fileName && respond.usageCount){
-          $('#usageCount').html(respond.usageCount);
+      }).done(function(response){
+        var signature = response.data.texture.signature;
+        var value = response.data.texture.value;
+        if(signature && value){
           swal({
             type: 'success',
             title: 'Enjoy your skin',
             text: 'The System going to download a skin file!'
           });
 
+          /* Create File */
           var download = $('<a>', {
-            href: 'Skins/' + respond.fileName + '.skin',
+            href: 'data:text/plain;charset=utf-8,' + encodeURIComponent(signature + '\n' + value + '\n' + 9223243187835955807),
             target: '_blank',
-            download: respond.fileName + '.skin'
+            download: response.id + '.skin'
           });
           download[0].click();
+          /* ----------- */
         } else {
           swal({
             type: 'error',
             title: 'Sorry, something went wrong!',
-            text: "Please upload a minecraft's skin or reload the site."
+            text: "Please re-upload a minecraft's skin or reload the site."
           });
         }
 
         $('.custom-file-input').val('');
         $('.custom-file-label').html('Choose skins(s)...');
-      }).fail(function(respond){
+      }).fail(function(response){
         swal({
           type: 'error',
           title: 'Sorry, something went wrong!',
           text: "Please upload a minecraft's skin or reload the site."
         });
-        console.log('Fail : ' + respond);
+        console.log('Fail : ' + response);
       });
     } else {
       swal({
