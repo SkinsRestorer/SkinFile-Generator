@@ -2,7 +2,7 @@
 **To Create skin file for Skinsrestorer**
 
 ## Let's go...
-https://api.riflowth.me/skinfilegenerator
+https://riflowth.github.io/SkinFile-Generator/
 
 ## Sponsors
 We want to say `Thank you` to all of them.
