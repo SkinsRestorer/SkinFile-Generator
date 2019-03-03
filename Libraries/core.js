@@ -37,7 +37,7 @@ $(document).ready(function(){
 
           /* Create File */
           var download = $('<a>', {
-            href: 'data:text/plain;charset=utf-8,' + encodeURIComponent(signature + '\n' + value + '\n' + 9223243187835955807),
+            href: 'data:text/plain;charset=utf-8,' + encodeURIComponent(value + '\n' + signature + '\n' + 9223243187835955807),
             target: '_blank',
             download: response.id + '.skin'
           });
