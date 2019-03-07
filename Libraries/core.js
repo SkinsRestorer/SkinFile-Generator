@@ -39,7 +39,7 @@ $(document).ready(function(){
           var download = $('<a>', {
             href: 'data:text/plain;charset=utf-8,' + encodeURIComponent(value + '\n' + signature + '\n' + 9223243187835955807),
             target: '_blank',
-            download: response.id + '.skin'
+            download: $('#fileName').val() == '' ? response.id : $('#fileName').val() + '.skin'
           });
           download[0].click();
           /* ----------- */
