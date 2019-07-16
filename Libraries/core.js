@@ -44,7 +44,7 @@ $('#uploadFile').on('submit', function(e){
         });
 
         /* Create File */
-        var blob = new Blob([value+'\n'+signature+'\n'+9223243187835955807], {type: "text/plain;charset=utf-8"});
+        var blob = new Blob([value+'\n'+signature+'\n'+4102444800000], {type: "text/plain;charset=utf-8"});
         saveAs(blob, $('#fileName').val() == '' ? response.id + '.skin' : $('#fileName').val() + '.skin');
         /* ----------- */
       } else {
