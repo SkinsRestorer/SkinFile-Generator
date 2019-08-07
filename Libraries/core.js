@@ -77,7 +77,7 @@ $('#uploadFile').on('submit', function(e){
   e.preventDefault();
   if($('.custom-file-input').val()){
     var data = new FormData($(this)[0]);
-    upload(data, 5);
+    upload(data, 2);
   } else {
     swal({
       type: 'warning',
