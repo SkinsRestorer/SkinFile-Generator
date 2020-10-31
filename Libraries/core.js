@@ -1,3 +1,5 @@
+checkApiStatus();
+
 var fileName;
 var isSlim = false;
 var skinURL;
@@ -127,3 +129,17 @@ $("[id^=skintype-]").on("change", function(){
     $("#skintype-steve").prop("checked", !isSlim);
   });
 });
+
+/* Check MineSkin API */
+function checkApiStatus() {
+  $.ajax({
+    type: 'get',
+    url: 'https://api.mineskin.org/',
+    dataType: 'json',
+    encode: true
+  }).fail(function(response){
+    $('#api-status-badge').html('DOWN');
+    $('#api-status-badge').removeClass('badge-success');
+    $('#api-status-badge').addClass('badge-danger');
+  });
+}
