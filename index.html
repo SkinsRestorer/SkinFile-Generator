@@ -92,7 +92,7 @@
                     <label class="custom-control-label" for="skintype-alex">Alex</label>
                   </div>
                 </div>
-                <input id="fileName" class="form-control form-control-sm mt-2" type="text" placeholder="[Optional] Desired /skin name">
+                <input id="fileName" class="form-control form-control-sm mt-2" type="text" placeholder="[Optional] Desired /skin name" onkeyup="this.value=this.value.replace(/[^a-z0-9]/g, '')">
                 <button class="btn btn-success mt-3 w-100" type="submit">Upload!</button>
               </form>
             </div>
