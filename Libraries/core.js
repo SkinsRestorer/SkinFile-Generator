@@ -142,7 +142,7 @@ $("[id^=skintype-]").on("change", function () {
 function checkApiStatus() {
   $.ajax({
     type: 'get',
-    url: 'https://api.mineskin.org/',
+    url: 'https://api.mineskin.org/get/delay',
     dataType: 'json',
     encode: true
   }).fail(function (response) {
