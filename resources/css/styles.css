@@ -1,0 +1,86 @@
+/* Reset */
+body, html{
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji","Pridi";
+}
+
+img{
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+/* BootStrap Overriding */
+.text-warning{
+	color: #FFB400!important;
+}
+
+/* Animation */
+.animate-zoom-1{
+	transition: all 150ms ease-out;
+}
+
+.animate-zoom-1:hover{
+	transform: scale(1.05);
+}
+
+/* Buttons */
+.btn-pill{
+	border-radius: 50px;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.btn-primary:hover{
+	background-color: #006fe6;
+    border-color: #006fe6;
+	box-shadow: 0 2px 10px rgba(0,0,0,.05), 0 2px 8px rgba(0,123,255,.25);
+}
+
+.btn-info{
+	background-color: #00B8D8;
+	border-color: #00B8D8;
+}
+
+.btn-info:hover{
+    background-color: #00a2bf;
+    border-color: #00a2bf;
+    box-shadow: 0 2px 10px rgba(0,0,0,.05),0 2px 8px rgba(0,184,216,.25)
+}
+
+.btn-success{
+	background-color: #17C671;
+	border-color:#17C671;
+}
+
+.btn-success:hover{
+    background-color: #14af64;
+    border-color: #14af64;
+    box-shadow: 0 5px 15px rgba(0,0,0,.05), 0 4px 10px rgba(23,198,113,.25);
+}
+
+/* Shadows and Borders */
+.box-shadow{
+	box-shadow: 0 1px 15px rgba(0,0,0,.075);
+}
+
+.rounded-1{
+	border-radius: 4px;
+}
+
+.absolute-fixed-top{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.absolute-fixed-bottom{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+/* Decorations */
