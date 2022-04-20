@@ -1,7 +1,5 @@
 # [SkinFile Generator](https://github.com/riflowth/SkinFile-Generator) [![License: MIT](https://img.shields.io/github/license/SkinsRestorer/SkinFile-Generator.svg)](https://opensource.org/licenses/MIT)
-**To Create skin file for Skinsrestorer**
-
-**! Now support only CHROME for another browser please wait...**
+**Create skin files for SkinsRestorer**
 
 ## Let's go...
 https://skinsrestorer.github.io/SkinFile-Generator/
