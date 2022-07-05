@@ -1,3 +1,8 @@
+import jquery from "jquery";
+import Swal from 'sweetalert2';
+
+window.$ = jquery;
+
 checkApiStatus();
 
 let fileName;
@@ -26,10 +31,10 @@ function upload(data, retrycount) {
         nextRequest = Date.now() + 10000;
       }
       if (signature && value) {
-        swal({
+        Swal.fire({
           type: 'success',
           title: 'Enjoy your skin',
-          text: 'The System going to download a skin file!'
+          text: 'The system is now going to download a skin file!'
         });
         /* Create File */
         let fileName = $('#fileName').val().toLowerCase();
@@ -43,7 +48,7 @@ function upload(data, retrycount) {
           swal({
             type: 'error',
             title: 'Sorry, something went wrong!',
-            text: "Please upload a minecraft's skin or reload the site."
+            text: "Please upload a minecraft skin or reload the site."
           });
         }
       }
@@ -55,10 +60,10 @@ function upload(data, retrycount) {
       if (retrycount > 0) {
         upload(data, retrycount - 1)
       } else {
-        swal({
+        Swal.fire({
           type: 'error',
           title: 'Sorry, something went wrong!',
-          text: "Please upload a minecraft's skin or reload the site."
+          text: "Please upload a minecraft skin or reload the site."
         });
       }
     });
@@ -89,10 +94,10 @@ $('#uploadFile').on('submit', function (e) {
     const data = new FormData($(this)[0]);
     upload(data, 2);
   } else {
-    swal({
+    Swal.fire({
       type: 'warning',
       title: 'Sorry, something went wrong!',
-      text: "Please select a minecraft's skin first."
+      text: "Please select a minecraft skin first."
     });
   }
 });
