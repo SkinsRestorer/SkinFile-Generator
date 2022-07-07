@@ -9,7 +9,7 @@ let isSlim = false;
 let nextRequest = Date.now() + 1000;
 
 function upload(data, retryCount) {
-  console.log("Trying to upload to mineskin");
+  console.info("Trying to upload to mineskin");
   setTimeout(function () {
     $.ajax({
       type: 'post',
@@ -52,9 +52,8 @@ function upload(data, retryCount) {
       }
 
       $('.custom-file-input').val('');
-      $('.custom-file-label').html('Choose skins(s)...');
     }).fail(function (response) {
-      console.log('Fail : ' + response);
+      console.error('Fail : ' + response);
       if (retryCount > 0) {
         upload(data, retryCount - 1)
       } else {
