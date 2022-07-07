@@ -5,13 +5,11 @@ window.$ = jquery;
 
 checkApiStatus();
 
-let fileName;
 let isSlim = false;
-let skinURL;
 let nextRequest = Date.now() + 1000;
 
-function upload(data, retrycount) {
-  console.log("try upload to mineskin");
+function upload(data, retryCount) {
+  console.log("Trying to upload to mineskin");
   setTimeout(function () {
     $.ajax({
       type: 'post',
@@ -32,24 +30,24 @@ function upload(data, retrycount) {
       }
       if (signature && value) {
         Swal.fire({
-          type: 'success',
+          icon: 'success',
           title: 'Enjoy your skin',
           text: 'The system is now going to download a skin file!'
-        });
+        }).then();
         /* Create File */
         let fileName = $('#fileName').val().toLowerCase();
         const blob = new Blob([value + '\n' + signature + '\n' + 4102444800000], {type: "text/plain;charset=utf-8"});
         saveAs(blob, fileName === '' ? response.id + '.skin' : fileName + '.skin');
         /* ----------- */
       } else {
-        if (retrycount > 0) {
-          upload(data, retrycount - 1)
+        if (retryCount > 0) {
+          upload(data, retryCount - 1)
         } else {
-          swal({
-            type: 'error',
+          Swal.fire({
+            icon: 'error',
             title: 'Sorry, something went wrong!',
             text: "Please upload a minecraft skin or reload the site."
-          });
+          }).then();
         }
       }
 
@@ -57,32 +55,22 @@ function upload(data, retrycount) {
       $('.custom-file-label').html('Choose skins(s)...');
     }).fail(function (response) {
       console.log('Fail : ' + response);
-      if (retrycount > 0) {
-        upload(data, retrycount - 1)
+      if (retryCount > 0) {
+        upload(data, retryCount - 1)
       } else {
         Swal.fire({
-          type: 'error',
+          icon: 'error',
           title: 'Sorry, something went wrong!',
           text: "Please upload a minecraft skin or reload the site."
-        });
+        }).then();
       }
     });
   }, Math.max(500, nextRequest - Date.now()));
 }
 
 $('#skinFile').on('change', function () {
-  fileName = $(this).val().split('\\').pop();
-  if (fileName) {
-    $(this).next('.custom-file-label').html(fileName);
-    console.log('File selected : ' + fileName);
-  } else {
-    $(this).next('.custom-file-label').html('Choose skins(s)...');
-    console.log('No file selected!');
-  }
-
-  skinURL = URL.createObjectURL(event.target.files[0]);
-  skinChecker(function () {
-    console.log('slimness: ' + isSlim);
+  skinChecker(URL.createObjectURL(event.target.files[0]), function () {
+    console.debug('slimness: ' + isSlim);
     $("#skintype-alex").prop("checked", isSlim);
     $("#skintype-steve").prop("checked", !isSlim);
   });
@@ -90,20 +78,24 @@ $('#skinFile').on('change', function () {
 
 $('#uploadFile').on('submit', function (e) {
   e.preventDefault();
-  if ($('#skinFile').val()) {
-    const data = new FormData($(this)[0]);
+  const skinFile = $('#skinFile')
+  if (skinFile.val()) {
+    const data = new FormData();
+    data.append("file", skinFile[0].files[0]);
+    data.append("variant", isSlim ? "slim" : "classic");
+
     upload(data, 2);
   } else {
     Swal.fire({
-      type: 'warning',
+      icon: 'warning',
       title: 'Sorry, something went wrong!',
       text: "Please select a minecraft skin first."
-    });
+    }).then();
   }
 });
 
 /* Check what type of skins (Alex or Steve) */
-function skinChecker(callback) {
+function skinChecker(skinURL, callback) {
   const image = new Image();
   image.crossOrigin = "Anonymous";
   image.src = skinURL;
@@ -148,7 +140,7 @@ function checkApiStatus() {
     url: 'https://api.mineskin.org/get/delay',
     dataType: 'json',
     encode: true
-  }).fail(function (response) {
+  }).fail(function () {
     const statusBadge = $('#api-status-badge');
     statusBadge.html('DOWN');
     statusBadge.removeClass('bg-success');
