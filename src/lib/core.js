@@ -51,7 +51,7 @@ function upload(data, retryCount) {
         }
       }
 
-      $('.custom-file-input').val('');
+      $('#skinFile').val('');
     }).fail(function (response) {
       console.error('Fail : ' + response);
       if (retryCount > 0) {
