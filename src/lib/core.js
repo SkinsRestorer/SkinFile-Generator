@@ -70,7 +70,7 @@ function upload(data, retrycount) {
   }, Math.max(500, nextRequest - Date.now()));
 }
 
-$('.custom-file-input').on('change', function () {
+$('#skinFile').on('change', function () {
   fileName = $(this).val().split('\\').pop();
   if (fileName) {
     $(this).next('.custom-file-label').html(fileName);
@@ -90,7 +90,7 @@ $('.custom-file-input').on('change', function () {
 
 $('#uploadFile').on('submit', function (e) {
   e.preventDefault();
-  if ($('.custom-file-input').val()) {
+  if ($('#skinFile').val()) {
     const data = new FormData($(this)[0]);
     upload(data, 2);
   } else {
@@ -132,15 +132,13 @@ function skinChecker(callback) {
   }
 }
 
-/* If user changes skintype radios */
-$("[id^=skintype-]").on("change", function () {
-  isSlim = !isSlim;
+$("#skintype-steve").on("change", function () {
+  isSlim = false;
+});
 
-  skinChecker(function () {
-    console.log('slimness: ' + isSlim);
-    $("#skintype-alex").prop("checked", isSlim);
-    $("#skintype-steve").prop("checked", !isSlim);
-  });
+/* If user changes skintype radios */
+$("#skintype-alex").on("change", function () {
+  isSlim = true;
 });
 
 /* Check MineSkin API */
@@ -153,7 +151,7 @@ function checkApiStatus() {
   }).fail(function (response) {
     const statusBadge = $('#api-status-badge');
     statusBadge.html('DOWN');
-    statusBadge.removeClass('badge-success');
-    statusBadge.addClass('badge-danger');
+    statusBadge.removeClass('bg-success');
+    statusBadge.addClass('bg-danger');
   });
 }

@@ -57,7 +57,7 @@
                 <div class="position-relative bg-white shadow rounded-1 p-4">
                     <div class="absolute-fixed-top pt-1 bg-dark"></div>
                     <h6 class="mb-0"><i class="fas fa-signal text-success"></i> API Status <span id="api-status-badge"
-                                                                                                 class="badge badge-success">ONLINE</span>
+                                                                                                 class="badge bg-success">ONLINE</span>
                     </h6>
                     <br>Powered by <a href="https://mineskin.org">MineSkin</a>
                 </div>
@@ -69,17 +69,16 @@
                     <p><i class="fas fa-star text-warning"></i> Select your skin file!</p>
                     <form id="uploadFile" method="post">
                         <div class="mb-3">
-                            <input name="file" class="form-control" type="file">
+                            <input id="skinFile" class="form-control" type="file">
                         </div>
                         <div class="form-group">
                             <p class="text-muted mb-0 mr-3 form-check-inline">Skin Type</p>
                             <div class="form-check form-check-inline">
-                                <input id="skintype-steve" class="form-check-input" type="radio">
+                                <input id="skintype-steve" class="form-check-input" name="model" type="radio" checked>
                                 <label class="form-check-label" for="skintype-steve">Steve</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input id="skintype-alex" class="form-check-input" name="model" value="slim"
-                                       type="radio">
+                                <input id="skintype-alex" class="form-check-input" name="model" type="radio">
                                 <label class="form-check-label" for="skintype-alex">Alex</label>
                             </div>
                         </div>
