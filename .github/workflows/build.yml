@@ -1,4 +1,4 @@
-name: Build
+name: Build and Deploy
 on:
   push:
     branches:
@@ -9,9 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install deps
-        run: npm ci
+        run: yarn
       - name: Build
-        run: npm run build
+        run: yarn build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
