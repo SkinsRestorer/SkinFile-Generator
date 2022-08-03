@@ -6,7 +6,7 @@
     "build": "parcel build --public-url ./"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "2.6.2",
+    "@parcel/transformer-sass": "2.7.0",
     "parcel": "latest"
   },
   "dependencies": {
