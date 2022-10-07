@@ -67,10 +67,10 @@
             <div class="col-lg-5 mb-lg-0 mb-4">
                 <div class="position-relative bg-white shadow rounded-1 p-4">
                     <div class="absolute-fixed-top pt-1 bg-dark"></div>
-                    <p><i class="fas fa-star text-warning"></i> Select your skin file!</p>
+                    <p><i class="fas fa-star text-warning"></i> Select your skin image file!</p>
                     <form id="uploadFile" method="post">
                         <div class="mb-3">
-                            <input id="skinFile" class="form-control" type="file">
+                            <input accept="image/png" id="imageFile" class="form-control" type="file">
                         </div>
                         <div class="form-group">
                             <p class="text-muted mb-0 mr-3 form-check-inline">Skin Type</p>
@@ -88,6 +88,20 @@
                                onkeyup="this.value=this.value.replace(/[^a-z\d_]/g, '')">
                         <small class="form-text text-muted">Skin name can be only a-b 0-9 _ (underscore)</small>
                         <button class="btn btn-success mt-3 w-100" type="submit">Upload!</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Reverser -->
+            <div class="col-lg-4 mb-lg-0 mb-4">
+                <div class="position-relative bg-white shadow rounded-1 p-4">
+                    <div class="absolute-fixed-top pt-1 bg-dark"></div>
+                    <p><i class="fas fa-rotate text-warning"></i> Reverse your
+                        .skin file! <span class="badge bg-primary">NEW</span></p>
+                    <form id="referseFile" method="post">
+                        <div class="mb-3">
+                            <input accept=".skin" id="skinFile" class="form-control" type="file">
+                        </div>
+                        <button class="btn btn-success mt-3 w-100" type="submit">Reverse!</button>
                     </form>
                 </div>
             </div>
