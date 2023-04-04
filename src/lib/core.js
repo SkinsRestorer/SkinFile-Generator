@@ -46,7 +46,7 @@ function upload(data, retryCount) {
                     Swal.fire({
                         icon: 'error',
                         title: 'Sorry, something went wrong!',
-                        text: "Please upload a minecraft skin or reload the site."
+                        text: "Please upload a minecraft skin or reload the site.\nYou to upload the skin file size is wrong may be.\nSkin file size must is 64x64."
                     }).then();
                 }
             }
@@ -60,7 +60,7 @@ function upload(data, retryCount) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Sorry, something went wrong!',
-                    text: "Please upload a minecraft skin or reload the site."
+                    text: "Please upload a minecraft skin or reload the site.\nYou to upload the skin file size is wrong may be.\nSkin file size must is 64x64."
                 }).then();
             }
         });
