@@ -6,8 +6,8 @@
     "build": "parcel build --public-url ./"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "2.9.2",
-    "parcel": "2.9.2"
+    "@parcel/transformer-sass": "2.9.3",
+    "parcel": "2.9.3"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "6.4.0",
