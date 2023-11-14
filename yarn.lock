@@ -1598,10 +1598,10 @@ svgo@^2.4.0:
     picocolors "^1.0.0"
     stable "^0.1.8"
 
-sweetalert2@11.9.0:
-  version "11.9.0"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.9.0.tgz#c761c9ed6773f22f5c97edfef0c51944f1e70280"
-  integrity sha512-PA3qinKZMNGAhA+AUu2wU7yQOpeZCgOaYWRcg26f4cZN6f7M9iPBuobsxOhR9EHs7ihUIxT6vhAMiB4kcmk1SA==
+sweetalert2@11.9.1:
+  version "11.9.1"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.9.1.tgz#f7d4ef026bbd28a2942d28c0dbb8f56229badeec"
+  integrity sha512-UGCw/Eiq+vSnSD7YhsYs8DadgspHR8SXrpMzruYKWyguNFVX8R8H1vsQ47mDXJfqTIL4LHMtsb8R2QtgFOzxZQ==
 
 term-size@^2.2.1:
   version "2.2.1"
