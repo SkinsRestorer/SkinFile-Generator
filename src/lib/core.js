@@ -35,9 +35,17 @@ function upload(data, retryCount) {
                     text: 'The system is now going to download a skin file!'
                 }).then();
                 /* Create File */
-                let fileName = $('#fileName').val().toLowerCase();
-                const blob = new Blob([value + '\n' + signature + '\n' + 4102444800000], {type: "text/plain;charset=utf-8"});
-                saveAs(blob, fileName === '' ? response.id + '.skin' : fileName + '.skin');
+                let customFileName = $('#fileName').val().toLowerCase();
+
+                const fileData = {
+                    skinName: customFileName === '' ? response.id : customFileName,
+                    value: value,
+                    signature: signature,
+                    dataVersion: 1
+                }
+
+                const blob = new Blob([JSON.stringify(fileData)], {type: "text/plain;charset=utf-8"});
+                saveAs(blob, fileData.skinName + '.customskin');
                 /* ----------- */
             } else {
                 if (retryCount > 0) {
@@ -53,7 +61,7 @@ function upload(data, retryCount) {
 
             $('#imageFile').val('');
         }).fail(function (response) {
-            console.error('Fail : ' + response);
+            console.error('Fail : ', response);
             if (retryCount > 0) {
                 upload(data, retryCount - 1)
             } else {
@@ -134,7 +142,7 @@ $("#skintype-alex").on("change", function () {
     isSlim = true;
 });
 
-$('#referseFile').on('submit', function (e) {
+$('#reverseFile').on('submit', function (e) {
     e.preventDefault();
     const skinFile = $('#skinFile')
     if (skinFile.val()) {
