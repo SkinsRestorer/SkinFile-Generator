@@ -156,7 +156,7 @@ $("#reverseFile").on("submit", function(e) {
     Swal.fire({
       icon: "warning",
       title: "Sorry, something went wrong!",
-      text: "Please select a .skin file first."
+      text: "Please select a skin file first."
     }).then();
   }
 
@@ -166,7 +166,7 @@ $("#reverseFile").on("submit", function(e) {
       Swal.fire({
         icon: "error",
         title: "Sorry, something went wrong!",
-        text: "Please upload a valid .skin file or reload the site."
+        text: "Please upload a valid skin file or reload the site."
       }).then();
     });
   });
