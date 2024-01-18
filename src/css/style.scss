@@ -2,8 +2,11 @@
 @import "../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
 /* Reset */
-body, html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "Pridi";
+body,
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji", "Pridi";
 }
 
 img {
@@ -16,7 +19,7 @@ img {
 
 /* BootStrap Overriding */
 .text-warning {
-  color: #FFB400 !important;
+  color: #ffb400 !important;
 }
 
 /* Animation */
@@ -38,34 +41,40 @@ img {
 .btn-primary:hover {
   background-color: #006fe6;
   border-color: #006fe6;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, .05), 0 2px 8px rgba(0, 123, 255, .25);
+  box-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.05),
+    0 2px 8px rgba(0, 123, 255, 0.25);
 }
 
 .btn-info {
-  background-color: #00B8D8;
-  border-color: #00B8D8;
+  background-color: #00b8d8;
+  border-color: #00b8d8;
 }
 
 .btn-info:hover {
   background-color: #00a2bf;
   border-color: #00a2bf;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, .05), 0 2px 8px rgba(0, 184, 216, .25)
+  box-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.05),
+    0 2px 8px rgba(0, 184, 216, 0.25);
 }
 
 .btn-success {
-  background-color: #17C671;
-  border-color: #17C671;
+  background-color: #17c671;
+  border-color: #17c671;
 }
 
 .btn-success:hover {
   background-color: #14af64;
   border-color: #14af64;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, .05), 0 4px 10px rgba(23, 198, 113, .25);
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.05),
+    0 4px 10px rgba(23, 198, 113, 0.25);
 }
 
 /* Shadows and Borders */
 .box-shadow {
-  box-shadow: 0 1px 15px rgba(0, 0, 0, .075);
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.075);
 }
 
 .rounded-1 {
