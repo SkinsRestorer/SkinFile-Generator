@@ -21,8 +21,8 @@ dependencies:
     specifier: 3.7.1
     version: 3.7.1
   sweetalert2:
-    specifier: 11.10.3
-    version: 11.10.3
+    specifier: 11.10.4
+    version: 11.10.4
 
 devDependencies:
   '@parcel/transformer-sass':
@@ -2021,8 +2021,8 @@ packages:
       stable: 0.1.8
     dev: true
 
-  /sweetalert2@11.10.3:
-    resolution: {integrity: sha512-mZYtQR7v+khyEruq0SsVUa6XIdI9Aue8s2XAIpAwdlLN1T0w7mxKEjyubiBZ3/bLbHC/wGS4wNABvXWubCizvA==}
+  /sweetalert2@11.10.4:
+    resolution: {integrity: sha512-MOVRuEW/yQsyzgkaiHqAJcYKxW3vhtE5o3Skp6vZdyJejCOWo4FOicbjRfvqHAXTyTMuwDHA+0lYbO6BiHl1Gw==}
     dev: false
 
   /term-size@2.2.1:
