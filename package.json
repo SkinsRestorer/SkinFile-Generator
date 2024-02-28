@@ -7,8 +7,8 @@
     "fix": "prettier --write src/**/*.{js,html,css,scss,json}"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "2.11.0",
-    "parcel": "2.11.0",
+    "@parcel/transformer-sass": "2.12.0",
+    "parcel": "2.12.0",
     "prettier": "^3.2.4"
   },
   "dependencies": {
