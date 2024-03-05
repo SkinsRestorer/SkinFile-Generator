@@ -17,6 +17,6 @@
     "bootstrap": "5.3.3",
     "file-saver": "2.0.5",
     "jquery": "3.7.1",
-    "sweetalert2": "11.10.5"
+    "sweetalert2": "11.10.6"
   }
 }
