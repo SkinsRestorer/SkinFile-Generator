@@ -3,7 +3,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build --public-url ./",
+    "build": "parcel build",
     "fix": "prettier --write src/**/*.{js,html,css,scss,json}"
   },
   "devDependencies": {
