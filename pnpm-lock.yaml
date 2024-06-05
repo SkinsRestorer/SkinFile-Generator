@@ -24,8 +24,8 @@ importers:
         specifier: 3.7.1
         version: 3.7.1
       sweetalert2:
-        specifier: 11.11.0
-        version: 11.11.0
+        specifier: 11.11.1
+        version: 11.11.1
     devDependencies:
       '@parcel/transformer-sass':
         specifier: 2.12.0
@@ -1004,8 +1004,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  sweetalert2@11.11.0:
-    resolution: {integrity: sha512-wKCTtoE6lQVDKaJ5FFq+znk/YykJmJlD8RnLZps8C7DyivctCoRlVeeOwnKfgwKS+QJYon7s++3dmNi3/am1tw==}
+  sweetalert2@11.11.1:
+    resolution: {integrity: sha512-7jumu0I0/QdRa5R7K1mh05ZdhmsMV6rZOVtjpratZGidxyJD4Sn7rDSA+zmKHzvMef9hVTwPmDU3VxnvhVQMNg==}
 
   term-size@2.2.1:
     resolution: {integrity: sha512-wK0Ri4fOGjv/XPy8SBHZChl8CM7uMc5VML7SqiQ0zG7+J5Vr+RMQDoHa2CNT6KHUnTGIXH34UDMkPzAUyapBZg==}
@@ -2203,7 +2203,7 @@ snapshots:
       picocolors: 1.0.0
       stable: 0.1.8
 
-  sweetalert2@11.11.0: {}
+  sweetalert2@11.11.1: {}
 
   term-size@2.2.1: {}
 
