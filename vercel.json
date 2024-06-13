@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "https://skinsrestorer.net/generator", "permanent": true }
+  ]
+}
